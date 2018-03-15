@@ -1,14 +1,14 @@
-pipeline {
+node {
     agent { dockerfile true }
     stages {
         stage('Build') { 
             steps {
                 sh 'node --version' 
-				sh 'docker --version'
             }
         }
         stage('Run image') { 
-            steps {
+            container('docker') {
+				sh "docker --version"
                 sh 'dir .' 
             }
         }
