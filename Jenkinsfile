@@ -7,7 +7,7 @@ pipeline {
             }
         }
         stage('Run image') { 
-            container('docker') {
+            steps('docker') {
 				sh "docker --version"
                 sh 'dir .' 
             }
