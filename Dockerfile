@@ -1,7 +1,7 @@
 # use a node base image
 FROM node:8-alpine
 
-USER node
+# USER node
 
 # set maintainer
 LABEL maintainer "castro.roy@towersoft.net"
