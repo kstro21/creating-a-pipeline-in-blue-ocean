@@ -10,8 +10,11 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 
-RUN node --max_old_space_size=160 /usr/bin/npm install
-RUN node --max_old_space_size=160 /usr/bin/npm run build
+RUN dir /usr/local/bin/
+RUN dir /usr/lib/node_modules/
+
+RUN node --max_old_space_size=160 /usr/local/bin/npm install
+RUN node --max_old_space_size=160 /usr/local/bin/npm run build
 
 FROM nginx:alpine
 
